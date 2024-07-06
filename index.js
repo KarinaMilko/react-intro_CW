@@ -29,29 +29,85 @@ function App() {
       <Header />
       <main>
         <UserCard />
+        <News />
       </main>
       <Footer />
     </>
   );
 }
 
-function UserCard() {
-  const user = {
-    name: "Ivo",
-    age: 15,
-    isMale: false,
-    imgSrc:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+function News() {
+  const news = {
+    title: "Some news",
+    body: "Something hapenned",
+    isGood: false,
   };
-  // додати alt до img
+
+  const newsStyle = {
+    border: `3px solid ${news.isGood ? "green" : "red"}`,
+  };
+
   return (
-    <article className="userCard">
-      <h2 className="userName">{user.name}</h2>
-      <img className="userImg" src={user.imgSrc} alt={user.name} />
-      <p className="userAge">{user.age}</p>
+    <article style={newsStyle}>
+      <h2>{news.title}</h2>
+      <p>{news.body}</p>
     </article>
   );
 }
+
+function UserCard() {
+  const user = {
+    name: "Ivo",
+    age: 19,
+    isMale: false,
+    imgSrc:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+    favouriteColor: "orange",
+  };
+
+  const nameStyle = {
+    color: "red",
+    backgroundColor: "green",
+    border: "2px solid yellow",
+  };
+
+  const imgBorderStyle = {
+    border: `2px solid ${user.favouriteColor}`,
+  };
+
+  const ageStyle = {
+    color: user.age >= 18 ? "blue" : "green",
+  };
+
+  // додати alt до img
+  return (
+    <article className="userCard">
+      {/* <h2 className="userName">{user.name}</h2>
+      <img className="userImg" src={user.imgSrc} alt={user.name} />
+      <p className="userAge">{user.age}</p> */}
+      <h2 className="userName" style={nameStyle}>
+        {user.name}
+      </h2>
+      <img
+        className="userImg"
+        style={imgBorderStyle}
+        src={user.imgSrc}
+        alt={user.name}
+      />
+      <p className="userAge" style={ageStyle}>
+        {user.age}
+      </p>
+    </article>
+  );
+}
+
+// Реалізувати компонент (розмітка  + інлайн-стилі)
+const news = {
+  title: "Some news",
+  body: "Something hapenned",
+  isGood: true,
+};
+// гарна новина - зелена, не гарна - червона
 
 function Header() {
   return (

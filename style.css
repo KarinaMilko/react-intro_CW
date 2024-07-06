@@ -1,0 +1,31 @@
+body {
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.pageHeader {
+  background-color: aqua;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.logoImg {
+  width: 40px;
+}
+
+.pageFooter {
+  background-color: aqua;
+  padding: 20px;
+  margin-top: auto;
+  display: flex;
+  gap: 10px;
+}

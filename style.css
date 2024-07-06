@@ -22,6 +22,22 @@ body {
   width: 40px;
 }
 
+.userCard {
+  min-width: 200px;
+  max-width: 350px;
+  width: 100px;
+  background-color: beige;
+  padding: 10px;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.userImg {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
 .pageFooter {
   background-color: aqua;
   padding: 20px;

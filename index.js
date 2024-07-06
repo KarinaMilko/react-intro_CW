@@ -27,9 +27,29 @@ function App() {
   return (
     <>
       <Header />
-      <div>Hello React</div>
+      <main>
+        <UserCard />
+      </main>
       <Footer />
     </>
+  );
+}
+
+function UserCard() {
+  const user = {
+    name: "Ivo",
+    age: 15,
+    isMale: false,
+    imgSrc:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+  };
+  // додати alt до img
+  return (
+    <article className="userCard">
+      <h2 className="userName">{user.name}</h2>
+      <img className="userImg" src={user.imgSrc} alt={user.name} />
+      <p className="userAge">{user.age}</p>
+    </article>
   );
 }
 
